@@ -40,6 +40,19 @@
         radial-gradient(circle at top, #020617 0, #020617 45%, #000000 100%);
       color: var(--fg);
       font: 15px/1.6 var(--font-body);
+      /* --- PATCH: Tekstselectie uitschakelen --- */
+      -webkit-user-select: none; /* Safari, Chrome */
+      -moz-user-select: none;    /* Firefox */
+      -ms-user-select: none;     /* IE/Edge */
+      user-select: none;         /* Standaard */
+    }
+
+    /* Uitzondering: Sta selectie toe in juridische/input-panelen */
+    .legal-panel, .onboard-fields input, .onboard-fields select, .onboard-panel p {
+      -webkit-user-select: auto;
+      -moz-user-select: auto;
+      -ms-user-select: auto;
+      user-select: auto;
     }
 
     a { color: var(--accent-blue); text-decoration: none; }
@@ -431,7 +444,7 @@
         <dd>
           E-mail: <a href="mailto:info@cfservices.nl">info@cfservices.nl</a><br>
           Domeinbeheer: <a href="mailto:cliftonesajas@cfservices.nl">cliftonesajas@cfservices.nl</a>
-          </dd>
+        </dd>
 
         <dt>Verantwoordelijkheid</dt>
         <dd>
