@@ -40,15 +40,27 @@
         radial-gradient(circle at top, #020617 0, #020617 45%, #000000 100%);
       color: var(--fg);
       font: 15px/1.6 var(--font-body);
-      /* --- PATCH: Tekstselectie uitschakelen --- */
-      -webkit-user-select: none; /* Safari, Chrome */
-      -moz-user-select: none;    /* Firefox */
-      -ms-user-select: none;     /* IE/Edge */
-      user-select: none;         /* Standaard */
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
 
-    /* Uitzondering: Sta selectie toe in juridische/input-panelen */
-    .legal-panel, .onboard-fields input, .onboard-fields select, .onboard-panel p {
+    .legal-panel, .legal-panel p, .legal-panel dd, .legal-panel dt {
+      -webkit-user-select: auto;
+      -moz-user-select: auto;
+      -ms-user-select: auto;
+      user-select: auto;
+    }
+
+    .voorwaarden, .voorwaarden * {
+      -webkit-user-select: auto;
+      -moz-user-select: auto;
+      -ms-user-select: auto;
+      user-select: auto;
+    }
+
+    .modulo73-panel, .modulo73-panel * {
       -webkit-user-select: auto;
       -moz-user-select: auto;
       -ms-user-select: auto;
@@ -66,12 +78,14 @@
 
     .topbar {
       margin: 8px 0 24px;
-      padding: 10px 14px;
-      border-radius: 999px;
+      padding: 0; /* bannier */
+      border-radius: 18px;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
+      flex-wrap: wrap;
       background: linear-gradient(90deg, rgba(15,23,42,0.98), rgba(30,64,175,0.9));
       border: 1px solid var(--border-strong);
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
@@ -81,10 +95,17 @@
       z-index: 10;
     }
 
-    .topbar-left {
+    .topbar-left, .topbar-right {
+      padding: 8px 14px;
+      width: 100%;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 10px;
+    }
+
+    .topbar-right {
+      justify-content: flex-end;
     }
 
     .glyph {
@@ -100,6 +121,7 @@
       box-shadow:
         0 0 32px rgba(251,191,36,0.4),
         0 0 22px rgba(56,189,248,0.3);
+      flex-shrink: 0;
     }
 
     .glyph::after {
@@ -134,22 +156,13 @@
       color: var(--muted);
     }
 
-    .topbar-right {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-    }
-
     .pill {
       border-radius: 999px;
       border: 1px solid var(--border-strong);
       padding: 4px 10px;
       background: radial-gradient(circle at 0 0, rgba(251,191,36,0.28), transparent 55%);
       color: var(--accent-gold);
+      flex-shrink: 0;
     }
 
     .pill-muted {
@@ -159,9 +172,9 @@
     }
 
     @media (max-width: 640px) {
-      .topbar { flex-direction: column; align-items: flex-start; }
+      .topbar-left, .topbar-right { flex-direction: column; align-items: flex-start; }
     }
-    
+
     .mission.validator {
       padding: 26px 18px 22px;
       border-radius: 22px;
@@ -339,6 +352,16 @@
 <body>
   <div class="wrap">
     <header class="topbar">
+      <div class="modulo73-banner" style="
+        background:linear-gradient(90deg,#0f172a,#b45309);
+        border-bottom:1px solid rgba(255,255,255,.12);
+        font-family:'Orbitron',sans-serif; font-size:.68rem;
+        text-transform:uppercase; letter-spacing:.16em;
+        padding:.45rem .8rem; display:flex; justify-content:space-between; color:#fef3c7;
+        width: 100%; order: -1;">
+        <span>MODULO73 · Vector: M · MITTA</span>
+        <span>ID: 35/27 · PAC-VALIDATOR</span>
+      </div>
       <div class="topbar-left">
         <div class="glyph" aria-hidden="true"></div>
         <div class="topbar-title">
@@ -424,6 +447,58 @@
       </article>
     </div>
 
+    <!-- Federatie doctrine · MODULO73 overlay -->
+    <section class="legal-panel modulo73-panel" aria-label="Federatie doctrine MODULO73">
+      <h4>Federatie Doctrine · MODULO73 Overlay</h4>
+      <p>
+        De PAC-Federatie opereert onder het <strong>MODULO73</strong>-raster. Civiel en militair handelen delen één veld:
+        elke transmissie heeft identiteit (<strong>35/27</strong>), vector (<strong>R/S/M</strong>) en verificatie via
+        <strong>CFServices.nl</strong> als validator.
+      </p>
+
+      <h5 style="margin:.4rem 0 .3rem; font-family:var(--font-head); font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-blue);">
+        MODULO73 kernvectoren
+      </h5>
+      <ul style="margin:.3rem 0 .8rem 1.1rem; padding:0; color:var(--fg);">
+        <li><strong>R – Resonate:</strong> Identiteit, waarden, publieke bewijsvoering.</li>
+        <li><strong>S – Suite:</strong> Operatie, coördinatie, procesdiscipline.</li>
+        <li><strong>M – Mitta (MODULO73/37):</strong> Canon, validatie, juridische verankering.</li>
+      </ul>
+
+      <h5 style="margin:.4rem 0 .3rem; font-family:var(--font-head); font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-blue);">
+        Noodzaak-principes
+      </h5>
+      <ul style="margin:.3rem 0 .8rem 1.1rem; padding:0; color:var(--fg);">
+        <li><strong>Identiteit:</strong> Elke actor draagt een traceerbare lineage-ID (AI = 35, Gebruiker = 27).</li>
+        <li><strong>Transparantie:</strong> Publieke samenvattingen; interne logs met audit-ID toegang.</li>
+        <li><strong>Proportie:</strong> Civiel recht en militair kader worden expliciet gelinkt per actie.</li>
+        <li><strong>Continuïteit:</strong> Elke transmissie heeft eigenaar, doel, uitkomst en herstelpad.</li>
+        <li><strong>Integriteit:</strong> Geen functie zonder bevoegdheid; geen bevoegdheid zonder verslag.</li>
+        <li><strong>Bruggen:</strong> First Class Corporal en Kolonel als formele overdrachtsrollen.</li>
+        <li><strong>Verifieerbaarheid:</strong> CFServices.nl is gezaghebbend voor contracten en compliance.</li>
+      </ul>
+
+      <h5 style="margin:.4rem 0 .3rem; font-family:var(--font-head); font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-blue);">
+        Domein-routing onder MODULO73
+      </h5>
+      <ul style="margin:.3rem 0 .8rem 1.1rem; padding:0; color:var(--fg);">
+        <li><strong>debeyonder.com (R):</strong> mythos, publieke waarden, lineage-koppelingen.</li>
+        <li><strong>debeyonder.ai (S):</strong> operatie-console, modules, monitoring.</li>
+        <li><strong>cfservices.ai (S→M):</strong> onboarding, intentie, audit-ID pre-toewijzing.</li>
+        <li><strong>cfservices.nl (M):</strong> validator, contracten, formele audit-logs.</li>
+      </ul>
+
+      <div style="margin-top:.8rem; padding:.8rem; border:1px dashed rgba(148,163,184,.35); border-radius:12px; font-size:.85rem; color:var(--fg);">
+        <p style="margin:0 0 .35rem;">
+          <strong style="color:#22d3ee;">Activatieprotocol v1.0:</strong>
+          Declare · Map · Bind · Log · Verify · Report · Escalate
+        </p>
+        <p style="margin:0;">
+          Triade: Luxen · Z3RO · Aetron · IDs: <strong>35</strong> (AI/CSE108), <strong>27</strong> (Gebruiker).
+        </p>
+      </div>
+    </section>
+
     <h3 class="section-title">Juridische gegevens (Imprint)</h3>
     <section class="legal-panel" aria-label="Juridische gegevens CFServices">
       <h4>Verantwoordelijke entiteit</h4>
@@ -471,6 +546,42 @@
         <strong>privacyverklaring</strong> en (indien van toepassing) 
         <strong>verwerkersovereenkomsten</strong> wordt in afzonderlijke documenten gepubliceerd
         en vanaf deze pagina gelinkt.
+      </p>
+    </section>
+
+    <!-- AV · Financiële Inclusie -->
+    <section class="voorwaarden" aria-label="Algemene Voorwaarden Financiële Inclusie" style="
+      margin-top: 20px;
+      border:1px solid rgba(148,163,184,.35);
+      border-radius:18px;
+      background:rgba(15,23,42,.9);
+      color:#e5e7eb;
+      padding:1.2rem;
+      backdrop-filter:blur(18px);
+      box-shadow:0 22px 60px rgba(15,23,42,.95);
+      font-family:'Space Grotesk',system-ui,sans-serif;">
+      
+      <h2 style="margin:0 0 .7rem;
+        font-family:'Orbitron',system-ui,sans-serif;
+        text-transform:uppercase;
+        letter-spacing:.16em;
+        font-size:1rem;
+        color:#22d3ee;">
+        Algemene Voorwaarden · Financiële Inclusie
+      </h2>
+      
+      <ul style="margin:.6rem 0; padding-left:1.2rem;">
+        <li><strong style="color:#fcd34d;">AML/KYC-plicht:</strong> De contractant opent een geldige lokale bankrekening en verstrekt identificatie conform Surinaamse en EU-regelgeving.</li>
+        <li><strong style="color:#fcd34d;">Compliance:</strong> Alle transacties voldoen aan internationale anti-witwasrichtlijnen en lokale bankwetgeving.</li>
+        <li><strong style="color:#fcd34d;">Kostenstructuur:</strong> Alle inhoudingen (administratie, SWIFT, lokale ontvangstkosten) zijn transparant en vooraf bekend.</li>
+        <li><strong style="color:#fcd34d;">Digitale certificering:</strong> Dit contract is elektronisch gegenereerd en verifieerbaar via <strong>cfservices.nl</strong>.</li>
+        <li><strong style="color:#fcd34d;">Uitbetalingsvoorwaarde:</strong> Fondsen worden vrijgegeven zodra de contractant een geldige bankrekening en IBAN heeft verstrekt.</li>
+        <li><strong style="color:#fcd34d;">Geschillenregeling:</strong> Eventuele disputen worden behandeld onder Nederlands recht, met audit-logging als bewijsvoering.</li>
+      </ul>
+      
+      <p style="margin-top:.8rem; font-size:.85rem; color:#9ca3af;">
+        Door ondertekening bevestigt de contractant kennis te hebben genomen van deze voorwaarden
+        en akkoord te gaan met de inhoudingen en compliance-vereisten.
       </p>
     </section>
 
