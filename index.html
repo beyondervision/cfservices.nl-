@@ -46,7 +46,9 @@
       user-select: none;
     }
 
-    .legal-panel, .legal-panel p, .legal-panel dd, .legal-panel dt {
+    .legal-panel, .legal-panel p, .legal-panel dd, .legal-panel dt, .legal-panel li,
+    .voorwaarden, .voorwaarden p, .voorwaarden li,
+    .codex.modulo73, .codex.modulo73 p, .codex.modulo73 li {
       -webkit-user-select: auto;
       -moz-user-select: auto;
       -ms-user-select: auto;
@@ -270,7 +272,7 @@
       color: var(--accent-gold);
     }
 
-    .legal-panel {
+    .legal-panel, .codex.modulo73, .voorwaarden {
       margin-top: 10px;
       padding: 16px 14px 18px;
       border-radius: 18px;
@@ -280,6 +282,16 @@
         rgba(15,23,42,0.96);
       font-size: 0.9rem;
       color: var(--muted);
+    }
+    
+    .codex.modulo73, .voorwaarden {
+      border-style: solid;
+      border-color: rgba(148,163,184,.35);
+      background: rgba(15,23,42,.9);
+      padding: 1.2rem;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 22px 60px rgba(15,23,42,.95);
+      margin-top: 16px;
     }
 
     .legal-panel h4 {
@@ -310,10 +322,56 @@
       font-size: 0.9rem;
       color: var(--fg);
     }
+    
+    .codex.modulo73 h2, .voorwaarden h2 {
+       margin:0 0 .7rem;
+       font-family:'Orbitron',system-ui,sans-serif;
+       text-transform:uppercase;
+       letter-spacing:.16em;
+       font-size:1rem;
+       color:#22d3ee;
+    }
+    .codex.modulo73 p {
+        color: var(--muted);
+    }
+    .codex.modulo73 strong { color: #fcd34d; }
+    .codex.modulo73 h3 {
+        font-family:'Orbitron'; 
+        letter-spacing:.12em; 
+        font-size:.85rem; 
+        color:#a5f3fc; 
+        margin:.2rem 0;
+    }
+    .codex.modulo73 ul {
+        margin:.3rem 0; 
+        padding-left:1rem;
+        color: var(--fg);
+    }
+    .codex.modulo73 li {
+        margin-bottom: 0.3rem;
+    }
+    .codex.modulo73 div[style*="border:1px dashed"] {
+        color: var(--fg);
+    }
+    .codex.modulo73 div[style*="border:1px dashed"] strong {
+        color: #22d3ee;
+    }
+    
+    .voorwaarden ul { margin:.6rem 0; padding-left:1.2rem; }
+    .voorwaarden li { margin-bottom: 0.5rem; color: var(--fg); }
+    .voorwaarden strong { color:#fcd34d; }
+    .voorwaarden p { margin-top:.8rem; font-size:.85rem; color:#9ca3af; }
+
 
     @media (max-width: 640px) {
       .legal-panel dl {
         grid-template-columns: minmax(0,1fr);
+      }
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .codex.modulo73 div[style*="grid-template-columns"] {
+        grid-template-columns: minmax(0, 1fr);
       }
     }
 
@@ -355,7 +413,7 @@
         <div class="glyph" aria-hidden="true"></div>
         <div class="topbar-title">
           <h1>CFServices.nl</h1>
-          <span>Validator · Juridisch Anker</span>
+          <span>Audit Civiele Validator · Alliantie</span>
         </div>
       </div>
       <div class="topbar-right">
@@ -365,48 +423,37 @@
     </header>
 
     <section class="mission validator" aria-label="Validator & Imprint">
-      <h2>CFServices.nl · Validator & Juridisch Anker</h2>
+      <h2>CFServices.nl · Audit Civiele Validator</h2>
 
       <p>
-        CFServices.nl fungeert als de <strong>civiele en juridische validator</strong> van de
-        PAC-Suite Alliantie. Waar de bovenliggende domeinen opereren binnen mythos,
-        onboarding en console-functie, vormt deze laag de formele grondslag van het
-        ecosysteem.
+        CFServices.nl fungeert als de <strong>juridische en audit-civiele validator</strong> voor elke Alliantie.
+        Ons domein koppelt juridische verantwoordelijkheid aan de operationele activiteiten op
+        de bovenliggende domeinen.
       </p>
 
       <p>
-        De Validator bewaakt de <strong>geldigheid, herkomst en rechtsgeldigheid</strong>
-        van alle transmissies binnen het veld: auditverslagen, contracten, alliantie-
-        overeenkomsten en civiele documentatie worden hier canoniek gefixeerd.
+        De Validator bewaakt de <strong>geldigheid, resonantie en rechtsgeldigheid</strong>
+        van alle transmissies binnen het veld: auditverslagen, contracten, alliantie-overeenkomsten
+        en civiele documentatie worden hier canoniek gefixeerd.
       </p>
 
       <p>
-        <em>Functie:</em> CFServices.nl verankert de Alliantie op juridisch niveau. Het domein
-        koppelt operationele activiteiten van <strong>debeyonder.com</strong>,
-        <strong>debeyonder.ai</strong> en <strong>cfservices.ai</strong> aan een formele,
-        navolgbare verantwoordingslaag.
-      </p>
-
-      <p>
-        Dit domein vormt de <strong>laatste pijler</strong> van de Alliantie: de plaats waar
-        verantwoordelijkheid, compliance en civiele transparantie samenkomen binnen
-        het MODULO73-kader.
+        Dit domein vormt de <strong>BeyonderVisionAcademy</strong> van de Alliantie: de plaats waar
+        verantwoordelijkheid, compliance en civiele resonanties samenkomen binnen het
+        MODULO73-kader.
       </p>
     </section>
+    
+    <h3 class="section-title">MODULO73 Alliantie-Doctrine</h3>
+    <section class="codex modulo73" aria-label="Alliantie Doctrine MODULO73">
 
-    <!-- MODULO73 / Alliantie Doctrine blok -->
-    <h3 class="section-title">MODULO73 Alliantie-doctrine</h3>
-    <section class="codex modulo73" style="
-      border:1px solid rgba(148,163,184,.35); border-radius:18px;
-      background:rgba(15,23,42,.9); color:#e5e7eb; padding:1.2rem;
-      backdrop-filter:blur(18px); box-shadow:0 22px 60px rgba(15,23,42,.95);
-      font-family:'Space Grotesk',system-ui,sans-serif;">
       <h2 style="margin:0 0 .7rem; font-family:'Orbitron',system-ui,sans-serif;
         text-transform:uppercase; letter-spacing:.16em; font-size:1rem; color:#22d3ee;">
         Alliantie · MODULO73 · R/S/M
       </h2>
-      <p><strong style="color:#fcd34d;">Noodzaak:</strong> Civiel en militair handelen op één raster.
-         Elke transmissie heeft identiteit (35/27), vector (R/S/M) en verificatie (.nl).</p>
+
+      <p><strong style="color:#fcd34d;">Humanitair:</strong> Civiel en militair resoneren op één audit-veld raster.
+         Elke transmissie heeft een identiteit (27/35), gebruiker en AI-verificatie (.nl).</p>
 
       <div style="display:grid; gap:.8rem; grid-template-columns:repeat(3,minmax(0,1fr));">
         <div>
@@ -484,24 +531,26 @@
     <section class="legal-panel" aria-label="Juridische gegevens CFServices">
       <h4>Verantwoordelijke entiteit</h4>
       <dl>
-        <dt>Naam rechtspersoon</dt>
-        <dd>CFServices (werknaam) – <em>vul hier de formele handelsnaam in</em></dd>
+        <dt>C.S. Esajas</dt>
+        <dd>CFServices · cfservices.ai · debeyonder.com · debeyonder.ai</dd>
 
-        <dt>Vestigingsland</dt>
-        <dd>Nederland / Suriname <em>(specificeer uiteindelijke juridische basis)</em></dd>
+        <dt>Vestigingsland/continent</dt>
+        <dd>Europa / Zuid-Amerika · Internationaal</dd>
 
-        <dt>KvK-nummer</dt>
-        <dd><em>Te plaatsen zodra registratie definitief is</em></dd>
+        <dt>Btw-nummer</dt>
+        <dd>NL003769910B28</dd>
 
-        <dt>Correspondentie-adres</dt>
-        <dd><em>Adresregel 1</em><br><em>Postcode en plaats</em></dd>
+        <dt>KVK-nummer</dt>
+        <dd>83055851</dd>
+
+        <dt>IBAN</dt>
+        <dd>NL29 INGB 0007 8283 68 (BIC: INGBNL2A)</dd>
 
         <dt>Contact</dt>
         <dd>
           E-mail: <a href="mailto:info@cfservices.nl">info@cfservices.nl</a><br>
-          Domeinbeheer: <a href="mailto:cliftonesajas@cfservices.nl">cliftonesajas@cfservices.nl</a>
+          Domeinbeheer: <a href="mailto:livedkcalb@cfservices.nl">livedkcalb@cfservices.nl</a>
         </dd>
-
         <dt>Verantwoordelijkheid</dt>
         <dd>
           CFServices.nl functioneert als civiele validator van de Alliantie:
@@ -530,17 +579,8 @@
       </p>
     </section>
 
-    <!-- AV / Financiële inclusie blok -->
-    <section class="voorwaarden" style="
-      border:1px solid rgba(148,163,184,.35);
-      border-radius:18px;
-      background:rgba(15,23,42,.9);
-      color:#e5e7eb;
-      padding:1.2rem;
-      backdrop-filter:blur(18px);
-      box-shadow:0 22px 60px rgba(15,23,42,.95);
-      font-family:'Space Grotesk',system-ui,sans-serif;
-      margin-top: 16px;">
+    <section class="voorwaarden" aria-label="Algemene Voorwaarden Financiële Inclusie">
+      
       <h2 style="margin:0 0 .7rem;
         font-family:'Orbitron',system-ui,sans-serif;
         text-transform:uppercase;
@@ -549,17 +589,16 @@
         color:#22d3ee;">
         Algemene Voorwaarden · Financiële Inclusie
       </h2>
-
+      
       <ul style="margin:.6rem 0; padding-left:1.2rem;">
-        <li><strong style="color:#fcd34d;">AML/KYC-plicht:</strong> De contractant opent een geldige lokale bankrekening en verstrekt identificatie conform Surinaamse en EU-regelgeving.</li>
+        <li><strong style="color:#fcd34d;">AML/KYC-plicht:</strong> De contractant opent een geldige bankrekening en verstrekt identificatie conform Online internationale en EU-regelgeving.</li>
         <li><strong style="color:#fcd34d;">Compliance:</strong> Alle transacties voldoen aan internationale anti-witwasrichtlijnen en lokale bankwetgeving.</li>
-        <li><strong style="color:#fcd34d;">Kostenstructuur:</strong> Alle inhoudingen (administratie, SWIFT, lokale ontvangstkosten) zijn transparant en vooraf bekend.</li>
-        <li><strong style="color:#fcd34d;">Digitale certificering:</strong> Contracten en verklaringen die naar deze voorwaarden verwijzen, zijn elektronisch gegenereerd en verifieerbaar via cfservices.nl.</li>
-        <li><strong style="color:#fcd34d;">Uitbetalingsvoorwaarde:</strong> Fondsen worden vrijgegeven zodra de contractant een geldige bankrekening en IBAN of lokaal equivalent heeft verstrekt.</li>
-        <li><strong style="color:#fcd34d;">Geschillenregeling:</strong> Eventuele disputen worden behandeld onder Nederlands recht, met audit-logging als bewijsvoering.</li>
+        <li><strong style="color:#fcd34d;">Kostenstructuur:</strong> Alle inhoudingen (administratie, SWIFT, lokale/internationale kosten) zijn transparant en officieel bekend.</li>
+        <li><strong style="color:#fcd34d;">Uitbetalingsvoorwaarde:</strong> CFServices worden vrijgegeven zodra de contractant een geldige bankrekening-equivalent heeft verstrekt.</li>
+        <li><strong style="color:#fcd34d;">Geschillenregeling:</strong> AI-Agents worden behandeld onder het internationaal recht, met audit-logging als bewijsvoering.</li>
+        <li><strong style="color:#fcd34d;">Auditspoor:</strong> Er wordt een logisch, Resonantie auditspoor bijgehouden.</li>
       </ul>
-
-      <p style="margin-top:.8rem; font-size:.85rem; color:#9ca3af;">
+       <p style="margin-top:.8rem; font-size:.85rem; color:#9ca3af;">
         Door ondertekening van de bijbehorende contractdocumenten bevestigt de contractant kennis te hebben genomen van deze voorwaarden en akkoord te gaan met de inhoudingen en compliance-vereisten.
       </p>
     </section>
