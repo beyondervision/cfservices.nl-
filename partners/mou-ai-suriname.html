@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MoU · CFServices & AI Suriname</title>
+  <title>Partners & Allianties · CFServices.nl</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <meta name="robots" content="noindex, nofollow"> <meta name="theme-color" content="#020617">
+  <meta name="description" content="Overzicht van strategische partners, opleiders en pilot-programma's binnen het PAC-Suite Alliantie-ecosysteem.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#020617">
 
   <style>
     :root {
@@ -19,6 +21,7 @@
       --muted: #9ca3af;
       --accent-gold: #fbbf24;
       --accent-blue: #38bdf8;
+      --accent-green: #4ade80;
       --border-strong: rgba(148, 163, 184, 0.8);
       --border-subtle: rgba(51, 65, 85, 0.9);
       --font-head: "Orbitron", system-ui, sans-serif;
@@ -38,14 +41,11 @@
       user-select: none;
     }
 
-    /* Sta selectie toe in het contractdeel zodat partners kunnen kopiëren */
-    .mou-panel, .mou-panel * {
-      -webkit-user-select: auto;
-      user-select: auto;
-    }
+    a { color: var(--accent-blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     .wrap {
-      max-width: 900px;
+      max-width: 1080px;
       margin: 0 auto;
       padding: 20px 16px 40px;
     }
@@ -59,6 +59,9 @@
       border: 1px solid var(--border-strong);
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
       backdrop-filter: blur(18px);
+      position: sticky;
+      top: 8px;
+      z-index: 10;
     }
     
     .modulo-banner {
@@ -79,6 +82,34 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .topbar-left { display: flex; align-items: center; gap: 10px; }
+    
+    .glyph {
+      width: 42px; height: 42px;
+      border-radius: 12px;
+      border: 1px solid rgba(248,250,252,0.9);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(251,191,36,0.8), transparent 55%),
+        radial-gradient(circle at 80% 100%, rgba(56,189,248,0.8), transparent 58%),
+        radial-gradient(circle at 50% 40%, #020617, #020617);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 32px rgba(251,191,36,0.4);
+      flex-shrink: 0;
+    }
+
+    .glyph::after {
+      content: "CF";
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-head);
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      color: #0b1120;
     }
 
     .topbar h1 {
@@ -86,53 +117,105 @@
         font-family: var(--font-head);
         font-size: 0.9rem;
         letter-spacing: 0.12em;
+        text-transform: uppercase;
         color: var(--fg);
     }
+    
+    .topbar span.subtitle {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
 
-    .mou-panel {
+    .breadcrumbs {
+      margin: 10px 2px 16px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .breadcrumbs a { color: var(--muted); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
       margin-top: 20px;
-      padding: 2rem;
+    }
+
+    .partner-card {
       border-radius: 18px;
-      border: 1px solid var(--border-strong);
+      border: 1px solid var(--border-subtle);
       background: var(--bg-panel);
-      box-shadow: 0 28px 65px rgba(15,23,42,0.98);
+      padding: 1.5rem;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .mou-panel h2 {
-      margin: 0 0 1.5rem;
+    .partner-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-color: var(--accent-blue);
+    }
+
+    .partner-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+    }
+
+    .partner-card h3 {
+      margin: 0;
       font-family: var(--font-head);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-size: 1.1rem;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
       color: var(--accent-gold);
-      border-bottom: 1px solid var(--border-subtle);
-      padding-bottom: 1rem;
     }
 
-    .mou-panel h3 {
-      margin: 1.5rem 0 0.5rem;
-      font-family: var(--font-head);
-      font-size: 0.9rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent-blue);
+    .status-pill {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 2px 8px;
+        border-radius: 999px;
+        border: 1px solid;
     }
+    .status-pilot { color: var(--accent-green); border-color: var(--accent-green); background: rgba(74, 222, 128, 0.1); }
+    .status-concept { color: var(--muted); border-color: var(--muted); background: rgba(255,255,255,0.05); }
+    .status-internal { color: var(--accent-blue); border-color: var(--accent-blue); background: rgba(56, 189, 248, 0.1); }
 
-    .mou-panel p { margin-bottom: 1rem; color: var(--muted); line-height: 1.7; }
-    .mou-panel strong { color: var(--accent-gold); }
-    .mou-panel ul { margin: 0.5rem 0 1rem 1.2rem; padding: 0; }
-    .mou-panel li { margin-bottom: 0.4rem; color: var(--fg); }
-
-    .sign-block {
-        margin-top: 2rem;
-        padding-top: 1.5rem;
-        border-top: 1px dashed var(--border-subtle);
+    .partner-card p {
         font-size: 0.9rem;
         color: var(--muted);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+    }
+
+    .btn-small {
+        display: inline-block;
+        padding: 6px 12px;
+        border: 1px solid var(--border-strong);
+        border-radius: 6px;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--fg);
+        background: rgba(255,255,255,0.05);
+        transition: all 0.2s;
+    }
+    .btn-small:hover {
+        background: var(--accent-blue);
+        color: #020617;
+        border-color: var(--accent-blue);
+        text-decoration: none;
     }
 
     .foot {
-      margin-top: 26px;
+      margin-top: 40px;
       padding-top: 10px;
       border-top: 1px solid rgba(30,41,59,0.95);
       text-align: center;
@@ -142,81 +225,84 @@
       letter-spacing: 0.12em;
       font-family: var(--font-head);
     }
-    
-    .back-link {
-        display: inline-block;
-        margin-bottom: 10px;
-        color: var(--accent-blue);
-        text-decoration: none;
-        font-size: 0.8rem;
-        font-family: var(--font-head);
-    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <a href="/" class="back-link">← Terug naar Validator</a>
-    
     <header class="topbar">
-        <div class="modulo-banner">
-            <span>Memorandum of Understanding</span>
-            <span>PILOT-FASE v1.0</span>
+      <div class="modulo-banner">
+        <span>MODULO73 · Vector: M · MITTA</span>
+        <span>ID: 35/27 · PAC-VALIDATOR</span>
+      </div>
+      <div class="topbar-inner">
+        <div class="topbar-left">
+            <div class="glyph" aria-hidden="true"></div>
+            <div>
+                <h1>CFServices.nl</h1>
+                <span class="subtitle">Partners &amp; Allianties</span>
+            </div>
         </div>
-        <div class="topbar-inner">
-            <h1>CFServices.nl &amp; AI Suriname</h1>
-        </div>
+      </div>
     </header>
 
-    <section class="mou-panel">
-      <h2>Memorandum of Understanding</h2>
-      
-      <p>
-        <strong>Partijen:</strong> CFServices.nl (Validator & Werkgever) en AI Suriname (Opleider & Innovatiepartner).
-      </p>
-      
-      <h3>Doel</h3>
-      <p>
-        Het opzetten van een federatieve samenwerking waarin trainees en agents direct gekoppeld worden aan een 
-        <em>auditwaardig verdienmodel</em> onder het MODULO73-kader.
-      </p>
-      
-      <h3>Rol CFServices.nl (Validator)</h3>
-      <ul>
-        <li>Validator van contracten, fondsen en inkomensbewijzen.</li>
-        <li>Verstrekking van officiële werkgeversverklaring en uitbetaling via ING-rekening (SWIFT naar Suriname).</li>
-        <li>Beheer van Compliance (AML/KYC) en transparante audit-logging.</li>
-      </ul>
-      
-      <h3>Rol AI Suriname (Partner)</h3>
-      <ul>
-        <li>Opleiden en certificeren van agents (AI-trainingen, badges).</li>
-        <li>Aangeven van opdrachten of projecten die agents kunnen uitvoeren.</li>
-        <li>Levering van trainees die direct inzetbaar zijn in het verdienmodel.</li>
-      </ul>
-      
-      <h3>Gezamenlijke voordelen</h3>
-      <ul>
-        <li>Agents ontvangen direct een <strong>inkomensbewijs</strong> en <strong>fondsenverklaring</strong>.</li>
-        <li>Dit bewijs is <strong>auditwaardig</strong> voor derde partijen (banken, instanties, visa-aanvragen).</li>
-        <li>AI Suriname versterkt haar programma met een <strong>legitiem, internationaal verdienmodel</strong>.</li>
-        <li>Internationale klanten zien een <strong>gesloten keten</strong> (training → contract → uitbetaling).</li>
-      </ul>
-      
-      <p style="margin-top:1.5rem; border-left: 2px solid var(--accent-blue); padding-left: 1rem;">
-        <em>Dit MoU is een intentieverklaring en vormt de basis voor een pilot-samenwerking. 
-        Beide partijen erkennen dat verdere contractuele afspraken zullen volgen na succesvolle uitvoering van de pilot.</em>
-      </p>
-      
-      <div class="sign-block">
-        <p><strong>Datum:</strong> [Datum invullen bij ondertekening]</p>
-        <p><strong>Ondertekening:</strong></p>
-        <p>C.S. Esajas (CFServices.nl)<br><br>__________________________</p>
-        <p>[Naam Vertegenwoordiger] (AI Suriname)<br><br>__________________________</p>
-      </div>
+    <nav class="breadcrumbs" aria-label="Broodkruimelpad">
+      <a href="/">CFServices.nl</a> · <span>Partners</span>
+      <a style="margin-left:10px;" href="/">← Terug naar Validator</a>
+    </nav>
+
+    <section aria-label="Introductie">
+        <h2 style="font-family:'Orbitron'; color:var(--accent-blue); font-size:1.1rem; margin-bottom:0.5rem;">Strategische Allianties</h2>
+        <p style="color:var(--muted); max-width:700px; margin-bottom:2rem;">
+            Het PAC-Suite ecosysteem verbindt civiele en militaire doctrine via strategische partnerschappen. 
+            CFServices.nl valideert de contracten en inkomensstromen die voortvloeien uit deze samenwerkingen.
+        </p>
     </section>
 
+    <div class="grid">
+        
+        <article class="partner-card">
+            <div class="partner-header">
+                <h3>AI Suriname</h3>
+                <span class="status-pill status-pilot">Pilot-Fase</span>
+            </div>
+            <p>
+                Opleider en innovatiepartner in Suriname. Samenwerking gericht op het certificeren van AI-talent en het koppelen van trainees aan auditwaardige inkomensstromen.
+            </p>
+            <div>
+                <a href="mou-ai-suriname.html" class="btn-small">Bekijk MoU (Artefact)</a>
+            </div>
+        </article>
+
+        <article class="partner-card">
+            <div class="partner-header">
+                <h3>BeyonderVision Academy</h3>
+                <span class="status-pill status-internal">Educatie-Bron</span>
+            </div>
+            <p>
+                De bron van kennis en doctrine. Verzorgt de badges, training van de Triade en de intellectuele grondslag voor het MODULO73-kader.
+            </p>
+            <div>
+                <span style="font-size:0.75rem; color:var(--muted);">Interne Koppeling</span>
+            </div>
+        </article>
+
+        <article class="partner-card" style="opacity: 0.7;">
+            <div class="partner-header">
+                <h3>Skills for Africa</h3>
+                <span class="status-pill status-concept">Concept</span>
+            </div>
+            <p>
+                Potentiële toekomstige alliantie voor het opschalen van het "Train-to-Validate" model naar het Afrikaanse continent.
+            </p>
+            <div>
+                <span style="font-size:0.75rem; color:var(--muted);">In voorbereiding</span>
+            </div>
+        </article>
+
+    </div>
+
     <footer class="foot">
-      <span>CFServices.nl · Partners</span>
+      <span>CFServices.nl · Partner Index</span>
       <span>PAC-MODULO73 · Civiel · Echo-veld 35</span>
     </footer>
   </div>
