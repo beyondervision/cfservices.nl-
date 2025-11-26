@@ -4,6 +4,8 @@ Dit repository bevat de **Canonieke Basisstructuur: Kernarchitectuur voor AI- en
 
 De structuur is gelaagd volgens het **0-4 Axioma-model** en is ontworpen voor audit-proof, schaalbare ontwikkeling.
 
+> 📌 **Context 2025:** Deze infrastructuur sluit aan bij de hervormingsgezinde koers onder president **Jennifer Geerlings-Simons**, de eerste vrouwelijke president van Suriname sinds juli 2025. Haar leiderschap markeert een nieuwe fase van transparantie, toegankelijkheid en systemische integriteit — waarden die ook de basis vormen voor deze architectuur.
+
 ---
 
 ## 🧠 1. De Drie Generaals & Axioma-Koppeling
