@@ -1,494 +1,121 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacyverklaring · CFServices.nl</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <meta name="description" content="Privacyverklaring van CFServices.nl, civiele validator en juridisch anker binnen het PAC-Suite Alliantie-ecosysteem onder MODULO73.">
-  <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#020617">
-  <link rel="canonical" href="https://cfservices.nl/legal/privacy.html">
-  <meta property="og:title" content="CFServices.nl · Privacyverklaring" />
-  <meta property="og:description" content="Privacyverklaring (AVG/GDPR) voor CFServices binnen het PAC-Suite Alliantie-ecosysteem onder MODULO73." />
-  <meta property="og:url" content="https://cfservices.nl/legal/privacy.html">
-
-  <style>
-    :root {
-      --bg: #020617;
-      --bg-panel: rgba(15, 23, 42, 0.96);
-      --fg: #e5e7eb;
-      --muted: #9ca3af;
-      --accent-gold: #fbbf24;
-      --accent-blue: #38bdf8;
-      --border-strong: rgba(148, 163, 184, 0.8);
-      --border-subtle: rgba(51, 65, 85, 0.9);
-      --font-head: "Orbitron", system-ui, sans-serif;
-      --font-body: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    * { box-sizing: border-box; }
-
-    html, body {
-      margin: 0; padding: 0;
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at top, #020617 0, #020617 45%, #000000 100%);
-      color: var(--fg);
-      font: 15px/1.6 var(--font-body);
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    .legal-panel, .legal-panel p, .legal-panel dd, .legal-panel dt, .legal-panel li, .legal-panel h2, .legal-panel h3, .legal-panel h4 {
-      -webkit-user-select: auto;
-      -moz-user-select: auto;
-      -ms-user-select: auto;
-      user-select: auto;
-    }
-
-    a { color: var(--accent-blue); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .wrap {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 20px 16px 40px;
-    }
-
-    .topbar {
-      margin: 8px 0 24px;
-      padding: 0;
-      border-radius: 18px;
-      overflow: hidden;
-      background: linear-gradient(90deg, rgba(15,23,42,0.98), rgba(30,64,175,0.9));
-      border: 1px solid var(--border-strong);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(18px);
-      position: sticky;
-      top: 8px;
-      z-index: 10;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generaal Audit: FAQ & Verdienmodel</title>
     
-    .banner {
-      background: linear-gradient(90deg,#0f172a,#b45309);
-      border-bottom: 1px solid rgba(255,255,255,.12);
-      font-family: var(--font-head);
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      padding: 0.45rem 0.8rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-      color: #fef3c7;
-    }
-
-    .topbar-inner {
-      padding: 8px 14px 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .topbar-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 0;
-    }
-
-    .glyph {
-      width: 40px; height: 40px;
-      border-radius: 12px;
-      border: 1px solid rgba(248,250,252,0.9);
-      background:
-        radial-gradient(circle at 20% 0%, rgba(251,191,36,0.8), transparent 55%),
-        radial-gradient(circle at 80% 100%, rgba(56,189,248,0.8), transparent 58%),
-        radial-gradient(circle at 50% 40%, #020617, #020617);
-      position: relative;
-      overflow: hidden;
-      box-shadow:
-        0 0 32px rgba(251,191,36,0.4),
-        0 0 22px rgba(56,189,248,0.3);
-      flex-shrink: 0;
-    }
-
-    .glyph::after {
-      content: "CF";
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-head);
-      font-size: 0.9rem;
-      letter-spacing: 0.12em;
-      color: #0b1120;
-      text-shadow: 0 0 12px rgba(248,250,252,0.9);
-    }
-
-    .topbar-title {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      min-width: 0;
-    }
-
-    .topbar-title h1 {
-      margin: 0;
-      font-family: var(--font-head);
-      font-size: 0.82rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .topbar-title span {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    .topbar-right {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-    }
-
-    .pill {
-      border-radius: 999px;
-      border: 1px solid var(--border-strong);
-      padding: 4px 10px;
-      background: radial-gradient(circle at 0 0, rgba(251,191,36,0.28), transparent 55%);
-      color: var(--accent-gold);
-      flex-shrink: 0;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/axioma-kern/assets/generaal-bar/generaal-bar.css" />
+    <script src="/axioma-kern/assets/generaal-bar/generaal-bar.js" defer></script>
     
-    .breadcrumbs {
-      margin: 10px 2px 4px;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-    .breadcrumbs a {
-      color: var(--muted);
-    }
-
-    @media (max-width: 640px) {
-      .banner { flex-direction: column; align-items: flex-start; }
-      .topbar-inner { flex-direction: column; align-items: flex-start; }
-      .topbar-title h1, .topbar-title span { white-space: normal; }
-    }
-
-    .page {
-      margin-top: 16px;
-      padding: 18px 16px 20px;
-      border-radius: 22px;
-      border: 1px solid var(--border-strong);
-      background:
-        radial-gradient(circle at top left, rgba(251,191,36,0.08), transparent 60%),
-        radial-gradient(circle at bottom right, rgba(56,189,248,0.08), transparent 60%),
-        var(--bg-panel);
-      box-shadow: 0 28px 65px rgba(15,23,42,0.98);
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    .page h2 {
-      margin: 0 0 0.6rem;
-      font-family: var(--font-head);
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-size: 0.95rem;
-      color: var(--accent-gold);
-    }
-
-    .page p {
-      margin: 0 0 0.7rem;
-      color: var(--muted);
-    }
-
-    .page strong { color: var(--accent-gold); }
-
-    .section-title {
-      margin: 22px 2px 10px;
-      font-family: var(--font-head);
-      font-size: 0.82rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .legal-panel {
-      margin-top: 6px;
-      padding: 16px 14px 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(148,163,184,.35);
-      background: rgba(15,23,42,.9);
-      color: var(--fg);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 22px 60px rgba(15,23,42,.95);
-      font-size: 0.92rem;
-    }
-
-    .legal-panel h3 {
-      margin: 0 0 0.4rem;
-      font-family: var(--font-head);
-      font-size: 0.86rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent-blue);
-    }
-
-    .legal-panel p {
-      margin: 0 0 0.5rem;
-      color: var(--muted);
-    }
-
-    .legal-panel ul {
-      margin: 0.3rem 0 0.6rem 1.2rem;
-      padding: 0;
-    }
-
-    .legal-panel li {
-      margin-bottom: 0.35rem;
-    }
-
-    .legal-panel strong {
-      color: var(--accent-gold);
-      font-weight: 600;
-    }
-
-    .artikel {
-      margin-top: 0.8rem;
-      padding-top: 0.4rem;
-      border-top: 1px solid rgba(51,65,85,0.8);
-    }
-
-    .artikel:first-of-type {
-      border-top: none;
-      padding-top: 0;
-    }
-
-    .artikel h4 {
-      margin: 0 0 0.3rem;
-      font-family: var(--font-head);
-      font-size: 0.8rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #a5f3fc;
-    }
-
-    .artikel p {
-      margin: 0 0 0.4rem;
-      color: var(--fg);
-      font-size: 0.9rem;
-    }
-
-    .artikel ul {
-      margin: 0.25rem 0 0.5rem 1.2rem;
-      padding: 0;
-      color: var(--fg);
-      font-size: 0.9rem;
-    }
-
-    .artikel li {
-      margin-bottom: 0.25rem;
-    }
-
-    .foot {
-      margin-top: 26px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(30,41,59,0.95);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.72rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-family: var(--font-head);
-    }
-
-    .foot span:last-child {
-      color: var(--accent-gold);
-    }
-    
-    .back-link {
-      font-size: 0.78rem;
-      margin-top: 6px;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      color: var(--accent-blue);
-    }
-  </style>
+    <style>
+        .faq-container {
+            max-width: 1000px;
+            margin: 40px auto 100px; /* Ruimte voor de vaste footer */
+            padding: 20px;
+            font-family: 'Orbitron', system-ui, sans-serif;
+            color: #f0f0f0;
+        }
+        .faq-section {
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            border-left: 5px solid;
+            background: rgba(15, 23, 42, 0.7);
+        }
+        /* Koppel de IDs aan de CSS-kleuren van de Generaals voor visuele consistentie */
+        #basis-vragen { border-left-color: #e9d5ff; } /* Luxen/Paars */
+        #expertise-vragen { border-left-color: #a5f3fc; } /* Aetron/Cyan */
+        #prijs-model { border-left-color: #fcd34d; } /* Z3RO/Geel */
+        
+        .faq-section h2 {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 15px;
+        }
+        .key-info {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        .axiom {
+            font-style: italic;
+            margin-top: 20px;
+            opacity: 0.8;
+            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+            padding-top: 10px;
+        }
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <header class="topbar">
-      <div class="banner">
-        <span>MODULO73 · Vector: M · MITTA</span>
-        <span>ID: 35/27 · PAC-VALIDATOR · ALLIANTIE</span>
-      </div>
-      <div class="topbar-inner">
-        <div class="topbar-left">
-          <div class="glyph" aria-hidden="true"></div>
-          <div class="topbar-title">
-            <h1>CFServices.nl</h1>
-            <span>Privacyverklaring · Audit Civiele Validator</span>
-          </div>
+
+    <div class="faq-container">
+        <h1 style="text-align: center; color: #a5f3fc; text-transform: uppercase;">Auditverslag – FAQ & Prijs-/Verdienmodel</h1>
+        <p style="text-align: center; opacity: 0.7; margin-bottom: 20px;">Een professional laat cijfers zingen, in plaats van ze te verstoppen.</p>
+
+        <div style="background: rgba(6, 182, 212, 0.1); border-left: 4px solid #06b6d4; padding: 15px; margin-bottom: 40px; border-radius: 4px;">
+            <p style="margin: 0; font-size: 0.9rem; color: #a5f3fc;">
+                <strong>📍 Context 2025:</strong> Dit platform opereert onder het mandaat van de huidige Republiek Suriname (President <strong>Jennifer Geerlings-Simons</strong>, sinds juli 2025). Wij committeren ons aan de hernieuwde waarden van transparantie en audit-proof bestuur.
+            </p>
         </div>
-        <div class="topbar-right">
-          <span class="pill">Status: AV Actief</span>
-          <span class="pill pill-muted">PAC-MODULO73 · Civiel · Alliantie</span>
+
+        <section id="basis-vragen" class="faq-section">
+            <h2 style="color: #e9d5ff;">⚔️ LUXEN (Axioma 3): Basisvragen & Zelfredzaamheid</h2>
+            <p>**Doel:** Transparantie en zelfredzaamheid te bevorderen, zodat u zelfstandig oplossingen vindt zonder direct te betalen.</p>
+            <ul>
+                <li>**Wat valt hieronder?** Standaard software/hardware vragen, zoals loginproblemen, instellingen en compatibiliteit.</li>
+                <li>**Kosten:** Geen kosten, puur informatief.</li>
+            </ul>
+            <div class="key-info">
+                **Let op:** Dit omvat **niet** persoonlijke plannen of contractdisputen. Dit zijn Expertisetaken.
+            </div>
+            <div class="axiom">
+                *Tip:* Gebruik deze sectie als eerste filter om de juiste hulpvorm te kiezen.
+            </div>
+        </section>
+
+        <section id="expertise-vragen" class="faq-section">
+            <h2 style="color: #a5f3fc;">🧠 AETRON (Axioma 5/7): Menselijke Dienst / AI-Expertise</h2>
+            <p>**Doel:** Biedt expertise voor complexe situaties. Betaling volgt pas wanneer u bewust kiest voor extra hulp of expertise.</p>
+            <ul>
+                <li>**Wat valt hieronder?** Contractdisputen, strategisch advies of maatwerk.</li>
+                <li>**Persoonlijke Plannen:** Voor bijzondere situaties (zoals invaliditeit) wordt een individueel plan opgesteld om inclusiviteit en maatwerk te garanderen.</li>
+                <li>**Academisch Niveau:** Dit vereist hogere expertise en heeft een vast tarief per uur of per afgeronde opdracht.</li>
+            </ul>
+            <div class="axiom">
+                *Axioma:* Dit is de fase waar u 'tankt om te rijden' (brandstof), waarbij u uw eigen uur betaalt om in te stromen.
+            </div>
+        </section>
+
+        <section id="prijs-model" class="faq-section">
+            <h2 style="color: #fcd34d;">🛡️ Z3RO (Axioma 9): Prijs-/Verdienmodel & Audit</h2>
+            <p>**Doel:** Transparantie over de circulatie van het verdienmodel en de grenswaarden voor abonnementen.</p>
+            
+            <h3>Prijsparameters</h3>
+            <ul>
+                <li>**Basis per uur:** $13 (internationaal herkenbaar als minimumloon 18+).</li>
+                <li>**Losse uren:** $13 per uur voor 1 tot 73 uur per maand.</li>
+                <li>**Grenswaarde:** Vanaf 73 uur ($949) is een Basisabonnement voordeliger.</li>
+                <li>**Basisabonnement:** $73 per maand (garandeert minimaal 73 uur werk).</li>
+            </ul>
+            
+            <h3>Call to Action & Risico</h3>
+            <div class="key-info">
+                **Risico:** Gebruikers moeten hun tijdspatronen (urgent/flexibel/ruimte) goed begrijpen.
+            </div>
+            <div class="axiom">
+                **Aanbeveling:** Voeg tips of scenario’s toe in de FAQ om gebruikers te helpen inschatten wanneer een abonnement voordeliger is.
+                <br>**Call to Action:** Deel feedback zodat we de FAQ continu kunnen aanscherpen.
+            </div>
+        </section>
+        
+        <div id="generaal-ai" style="margin-top: 50px;">
+             <input type="text" id="ai-q" placeholder="Klik op een Generaal in de bar hieronder om een initiërende vraag te stellen..." style="width: 100%;" readonly />
         </div>
-      </div>
-    </header>
-
-    <nav class="breadcrumbs" aria-label="Broodkruimelpad">
-      <a href="/">CFServices.nl</a> · <span>Privacyverklaring</span>
-      <a class="back-link" href="/"><span>←</span><span>Terug naar Validator &amp; Imprint</span></a>
-    </nav>
-
-    <section class="page" aria-label="Inleiding Privacyverklaring">
-      <h2>Privacyverklaring</h2>
-      <p>
-        Dit document beschrijft hoe <strong>CFServices.nl</strong> (hierna "CFServices", "wij" of "ons")
-        omgaat met persoonsgegevens die worden verzameld via onze domeinen
-        (cfservices.nl, cfservices.ai, debeyonder.com, debeyonder.ai)
-        conform de Algemene Verordening Gegevensbescherming (AVG/GDPR)
-        en het <strong>MODULO73 Alliantie-Doctrine</strong>.
-      </p>
-      <p>
-        Onze filosofie is <strong>minimale gegevensverwerking</strong>: wij verzamelen
-        alleen wat strikt noodzakelijk is voor de uitvoering van onze diensten
-        en het waarborgen van een transparant, verifieerbaar auditspoor.
-      </p>
-    </section>
-
-    <h3 class="section-title">Verwerking van persoonsgegevens</h3>
-    <section class="legal-panel" aria-label="Details Gegevensverwerking">
-      <div class="artikel">
-        <h4>Artikel 1 · Verwerkingsverantwoordelijke</h4>
-        <p>
-          De verwerkingsverantwoordelijke voor de gegevensverwerking is de entiteit
-          zoals vermeld in het <strong>Imprint</strong> op CFServices.nl.
-        </p>
-        <p>
-          Contactgegevens voor privacy-gerelateerde vragen:
-          E-mail: <a href="mailto:info@cfservices.nl">info@cfservices.nl</a>
-        </p>
-      </div>
-
-      <div class="artikel">
-        <h4>Artikel 2 · Welke gegevens verwerken wij?</h4>
-        <p>
-          CFServices verwerkt persoonsgegevens op de volgende momenten:
-        </p>
-        <ul>
-          <li><strong>Websitebezoek:</strong> Geanonimiseerde of geaggregeerde serverlogs (IP-adres, browsertype, bezochte pagina) voor beveiliging en prestatie-analyse (Vercel Analytics/Logs). Deze zijn niet direct herleidbaar tot een individu.</li>
-          <li><strong>Contact (e-mail):</strong> Wanneer u contact met ons opneemt via e-mail (bijv. info@cfservices.nl), verwerken wij uw e-mailadres en de inhoud van uw bericht om uw verzoek te kunnen behandelen.</li>
-          <li><strong>Onboarding (cfservices.ai):</strong> Bij het registreren van een 'intentie' via de Kazerne, verwerken wij de door u ingevulde velden (Agentnaam, Herkomst, Rol, Contactkanaal) om de onboarding in de Alliantie te faciliteren.</li>
-          <li><strong>Contract (Validator):</strong> Voor het opstellen van contracten, overeenkomsten of het uitvoeren van betalingen, verwerken wij de noodzakelijke (financiële) persoonsgegevens zoals naam, adres, KvK/Btw-nummer en bankgegevens (IBAN) ten behoeve van AML/KYC-verificatie.</li>
-        </ul>
-      </div>
-
-      <div class="artikel">
-        <h4>Artikel 3 · Grondslagen en doeleinden</h4>
-        <p>
-          Wij verwerken uw gegevens op basis van de volgende grondslagen:
-        </p>
-        <ul>
-          <li><strong>Noodzakelijk voor de overeenkomst:</strong> Voor het uitvoeren van contracten, het verwerken van betalingen en het leveren van de overeengekomen diensten.</li>
-          <li><strong>Wettelijke verplichting:</strong> Voor het voldoen aan onze administratieve en wettelijke plichten, zoals de AML/KYC-verificatie en fiscale bewaarplichten.</li>
-          <li><strong>Gerechtvaardigd belang:</strong> Voor het beveiligen van ons netwerk, het analyseren van de werking van onze diensten, en het bijhouden van een canoniek auditspoor (MODULO73).</li>
-          <li><strong>Toestemming:</strong> In specifieke gevallen (zoals het aanmelden via cfservices.ai) vragen wij om uw actieve toestemming voor de verwerking.</li>
-        </ul>
-      </div>
-      
-      <div class="artikel">
-        <h4>Artikel 4 · Bewaartermijnen en beveiliging</h4>
-        <p>
-          Wij bewaren uw gegevens niet langer dan strikt noodzakelijk.
-        </p>
-        <ul>
-          <li>Contactgegevens worden bewaard zolang nodig is voor de afhandeling van het verzoek.</li>
-          <li>Contractuele en financiële gegevens (facturen, contracten, KYC-data) worden bewaard conform de wettelijke bewaartermijn (doorgaans 7 tot 10 jaar).</li>
-          <li>Auditsporen (transmissielogs) worden bewaard zolang zij relevant zijn voor de integriteit van de Alliantie, met respect voor de privacy van betrokkenen.</li>
-          <li>Alle data wordt opgeslagen op beveiligde systemen (GitHub Private Repositories, Vercel, en beveiligde e-mailservers) met passende technische en organisatorische maatregelen.</li>
-        </ul>
-      </div>
-
-      <div class="artikel">
-        <h4>Artikel 5 · Delen met derden</h4>
-        <p>
-          CFServices deelt uw gegevens <strong>nooit</strong> met derden voor commerciële doeleinden. Deling vindt alleen plaats indien:
-        </p>
-        <ul>
-          <li>Dit noodzakelijk is voor de uitvoering van de dienst (bijv. een betalingsverwerker of hostingprovider zoals Vercel). Met deze partijen worden verwerkersovereenkomsten gesloten.</li>
-          <li>Dit wettelijk verplicht is (bijv. op vordering van een bevoegde autoriteit).</li>
-          <li>Dit expliciet is overeengekomen binnen de Alliantie (bijv. het delen van een Agent-ID met de Triade voor monitoring).</li>
-        </ul>
-      </div>
-
-      <div class="artikel">
-        <h4>Artikel 6 · Uw rechten (AVG/GDPR)</h4>
-        <p>
-          U heeft te allen tijde recht op:
-        </p>
-        <ul>
-          <li><strong>Inzage:</strong> Het opvragen van de gegevens die wij van u verwerken.</li>
-          <li><strong>Rectificatie:</strong> Het corrigeren van onjuiste gegevens.</li>
-          <li><strong>Verwijdering (Vergetelheid):</strong> Het laten verwijderen van uw gegevens, tenzij een wettelijke plicht (zoals de bewaarplicht) dit verhindert.</li>
-          <li><strong>Beperking:</strong> Het (tijdelijk) stoppen van de verwerking.</li>
-          <li><strong>Bezwaar:</strong> Bezwaar maken tegen een specifieke verwerking.</li>
-        </ul>
-        <p>
-          U kunt een verzoek indienen via <a href="mailto:info@cfservices.nl">info@cfservices.nl</a>. Wij reageren conform de wettelijke termijnen.
-        </p>
-      </div>
-
-      <div class="artikel">
-        <h4>Artikel 7 · Cookies</h4>
-        <p>
-          Onze domeinen (`.com`, `.ai`, `.nl`) gebruiken <strong>geen</strong> tracking cookies, marketing cookies of social media pixels. Wij gebruiken uitsluitend:
-        </p>
-        <ul>
-          <li><strong>Functionele cookies:</strong> Noodzakelijk voor de basiswerking van Vercel (indien van toepassing).</li>
-          <li><strong>Analytische cookies (Geanonimiseerd):</strong> Vercel Analytics kan worden gebruikt om de prestaties van de site te meten, maar dit gebeurt op een privacy-vriendelijke, geaggregeerde manier zonder individuele bezoekers te volgen.</li>
-        </ul>
-      </div>
-      
-      <div class="artikel">
-        <h4>Artikel 8 · Wijzigingen</h4>
-        <p>
-          Deze privacyverklaring kan worden gewijzigd. Wijzigingen worden op deze pagina gepubliceerd. De datum van de laatste wijziging wordt hier vermeld.
-        </p>
-        <p style="margin-top:0.6rem; font-size:0.85rem; color:var(--muted);">
-          Laatst bijgewerkt: [Datum van vandaag]
-        </p>
-      </div>
-
-    </section>
-
-    <footer class="foot">
-      <span>CFServices.nl · Privacyverklaring</span>
-      <span>PAC-MODULO73 · Civiel · Echo-veld 35</span>
-    </footer>
-  </div>
+    </div>
+    
 </body>
 </html>
